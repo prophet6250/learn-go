@@ -59,4 +59,23 @@ func conditions() {
 	} else {
 		fmt.Println("who says I'm gay?\nyou are gay")
 	}
+
+	i := 10
+	switch i { // this will check for values of i, won't allow conditions
+	case 0:
+		fmt.Println("this is 0")
+	case 5:
+		fmt.Println("this is 5")
+	case 10:
+		fmt.Println("this is 10")
+	}
+
+	switch { // switch without variable will allow conditions over any variable as well
+	case i < 5:
+		fmt.Println("this is < 5")
+	case i < 10:
+		fmt.Println("this is < 10")
+	case i < 100:
+		fmt.Println("this is < 100")
+	}
 }
