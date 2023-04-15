@@ -8,7 +8,8 @@ func main() {
 	// fmt.Println("hello world")
 	// values()
 	// variables()
-	loops()
+	// loops()
+	conditions()
 }
 
 func values() {
@@ -49,5 +50,13 @@ func loops() {
 	for i < 3 {
 		fmt.Println(i)
 		i++
+	}
+}
+
+func conditions() {
+	if 69 == 69.0 { // implicit type conversion
+		fmt.Println("joe mama gay")
+	} else {
+		fmt.Println("who says I'm gay?\nyou are gay")
 	}
 }
