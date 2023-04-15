@@ -7,7 +7,8 @@ import (
 func main() {
 	// fmt.Println("hello world")
 	// values()
-	variables()
+	// variables()
+	loops()
 }
 
 func values() {
@@ -35,4 +36,18 @@ func variables() {
 
 	const chargeOfElectron float64 = 1.602176634 / 1e19 // can't convert scientific notation containing negative exponents to string
 	fmt.Println(chargeOfElectron)
+}
+
+func loops() {
+	// basic for loop
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
+	// while loop equivalent
+	i := 1
+	for i < 3 {
+		fmt.Println(i)
+		i++
+	}
 }
