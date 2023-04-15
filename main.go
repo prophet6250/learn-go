@@ -118,7 +118,7 @@ func calculator() {
 	case "/":
 		result, err = divide(operand1, operand2)
 	default:
-		fmt.Println("Invalid Operand")
+		fmt.Println("ERROR: Invalid Operand")
 	}
 
 	if err != nil {
@@ -130,8 +130,8 @@ func calculator() {
 }
 
 func add(a float32, b float32) (float32, error) {
-	valid, err := validateOperands(a, b)
-	if !valid {
+
+	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
 
@@ -139,8 +139,8 @@ func add(a float32, b float32) (float32, error) {
 }
 
 func subtract(a float32, b float32) (float32, error) {
-	valid, err := validateOperands(a, b)
-	if !valid {
+
+	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
 
@@ -148,8 +148,7 @@ func subtract(a float32, b float32) (float32, error) {
 }
 
 func multiply(a float32, b float32) (float32, error) {
-	valid, err := validateOperands(a, b)
-	if !valid {
+	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
 
@@ -157,8 +156,7 @@ func multiply(a float32, b float32) (float32, error) {
 }
 
 func divide(a float32, b float32) (float32, error) {
-	valid, err := validateOperands(a, b)
-	if !valid {
+	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
 
