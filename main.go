@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	// fmt.Println("hello world")
@@ -17,6 +19,8 @@ func values() {
 	fmt.Println(!false)
 }
 
+const constantString string = "constant string"
+
 func variables() {
 	var a = "some string"
 	fmt.Println(a)
@@ -26,4 +30,9 @@ func variables() {
 
 	another_string := "another string"
 	fmt.Println(another_string)
+
+	fmt.Println(constantString) // basic ass constant variable printing
+
+	const chargeOfElectron float64 = 1.602176634 / 1e19 // can't convert scientific notation containing negative exponents to string
+	fmt.Println(chargeOfElectron)
 }
