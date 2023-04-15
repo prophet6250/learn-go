@@ -4,7 +4,8 @@ import "fmt"
 
 func main() {
 	// fmt.Println("hello world")
-	values()
+	// values()
+	variables()
 }
 
 func values() {
@@ -14,4 +15,15 @@ func values() {
 	fmt.Println("7/3", 7/3.0)  // automatic type inference. 7/3 is int, 7/3.0 is float or double
 	fmt.Println(true || false) // boolean operations work just like C-like languages
 	fmt.Println(!false)
+}
+
+func variables() {
+	var a = "some string"
+	fmt.Println(a)
+
+	var b, c int = 1, 2
+	fmt.Println(b, c)
+
+	another_string := "another string"
+	fmt.Println(another_string)
 }
