@@ -14,7 +14,8 @@ func main() {
 	// variables()
 	// loops()
 	// conditions()
-	calculator()
+	// calculator()
+	arrays()
 }
 
 func values() {
@@ -177,4 +178,15 @@ func validateOperands(x float32, y float32) (bool, error) {
 	}
 
 	return true, nil
+}
+
+func arrays() {
+	fucks := [0]int{}
+	fmt.Println("this is how many fucks I've got:", len(fucks))
+
+	// array of size 1, of type int, with first element set to 0
+	// can be declared as var increasedFucks int[1]; increasedFucks[0] = 0;
+	increasedFucks := [1]int{0}
+
+	fmt.Printf("Increased fucks to %d. Now my fucks contain: %d\n", len(increasedFucks), increasedFucks[0])
 }
