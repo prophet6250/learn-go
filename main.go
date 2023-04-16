@@ -15,7 +15,8 @@ func main() {
 	// loops()
 	// conditions()
 	// calculator()
-	arrays()
+	// arrays()
+	maps()
 }
 
 func values() {
@@ -131,7 +132,6 @@ func calculator() {
 }
 
 func add(a float32, b float32) (float32, error) {
-
 	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
@@ -140,7 +140,6 @@ func add(a float32, b float32) (float32, error) {
 }
 
 func subtract(a float32, b float32) (float32, error) {
-
 	if valid, err := validateOperands(a, b); !valid {
 		return 0, err
 	}
@@ -189,4 +188,39 @@ func arrays() {
 	increasedFucks := [1]int{0}
 
 	fmt.Printf("Increased fucks to %d. Now my fucks contain: %d\n", len(increasedFucks), increasedFucks[0])
+}
+
+func maps() {
+	var dynamicMap map[string]string = make(map[string]string)
+	/*
+		// this won't work because these memory references won't exist
+		var staticMap map[string]string
+
+		staticMap["hello"] = "world"
+		staticMap["foo"] = "bar"
+		staticMap["ligma"] = "ligma balls"
+
+		fmt.Println(staticMap)
+	*/
+
+	dynamicMap["key1"] = "1"
+	dynamicMap["key2"] = "2"
+	dynamicMap["key3"] = "3"
+
+	// will return zero value (which is null for string) for nonexistent keys
+	valueOfKey, present := dynamicMap["key4"]
+
+	fmt.Println(valueOfKey, present)
+	fmt.Println("nonexistent values (should return null):", dynamicMap["key4"])
+
+	delete(dynamicMap, "key1")
+	fmt.Println(dynamicMap)
+
+	// won't do anything if the key doesn't exist
+	delete(dynamicMap, "key4")
+	fmt.Println(dynamicMap)
+
+	// declaration and definition in one line
+	var newMap map[string]string = map[string]string{"key": "value"}
+	fmt.Println(newMap)
 }
