@@ -18,7 +18,8 @@ func main() {
 	// arrays()
 	// maps()
 	// range_based_loops()
-	closures()
+	// closures()
+	recursiveFunctions()
 }
 
 func values() {
@@ -285,4 +286,30 @@ func intStream() func() int {
 		i += 1
 		return i
 	}
+}
+
+func recursiveFunctions() {
+	println(factorialOf(5))
+
+	// declare a variable which will store a function
+	var fib func(n int) int
+
+	// putting an anonymous function in a variable
+	fib = func(n int) int {
+		if n < 2 {
+			return n
+		}
+
+		return fib(n-1) + fib(n-2)
+	}
+
+	println(fib(6))
+}
+
+func factorialOf(x int) int {
+	if x == 0 {
+		return 1
+	}
+
+	return x * factorialOf(x-1)
 }
