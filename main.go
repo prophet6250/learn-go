@@ -19,7 +19,8 @@ func main() {
 	// maps()
 	// range_based_loops()
 	// closures()
-	recursiveFunctions()
+	// recursiveFunctions()
+	pointers()
 }
 
 func values() {
@@ -312,4 +313,23 @@ func factorialOf(x int) int {
 	}
 
 	return x * factorialOf(x-1)
+}
+
+func pointers() {
+	var i int = 0
+	println("initial", i)
+
+	callByValue(i)
+	println("call by value (should not change)", i)
+
+	callByReference(&i)
+	println("call by reference (should change)", i)
+}
+
+func callByValue(x int) {
+	x = 10
+}
+
+func callByReference(x *int) {
+	*x = 10
 }
