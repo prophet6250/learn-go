@@ -344,6 +344,23 @@ func newPerson(name string, age int) *Person {
 	return &Person{name: name, age: age}
 }
 
+func (P *Person) getName() string {
+	return P.name
+}
+
+func (P *Person) setName(name string) string {
+	P.name = name
+	return P.name
+}
+
+func (P *Person) getAge() int {
+	return P.age
+}
+
+func (P *Person) setAge(age int) int {
+	P.age = age
+	return P.age
+}
 func structure() {
 	// can't print structures with simple println :(
 	fmt.Println(Person{"Bob", 99})
@@ -360,4 +377,9 @@ func structure() {
 	person := Person{"person", 30}
 	person.age = 1000
 	fmt.Println(person)
+
+	// struct has methods!! awesome!
+	person.setName("hola")
+	person.setAge(-1)
+	println(person.getName(), person.getAge())
 }
