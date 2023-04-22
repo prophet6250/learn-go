@@ -20,7 +20,8 @@ func main() {
 	// range_based_loops()
 	// closures()
 	// recursiveFunctions()
-	pointers()
+	// pointers()
+	structure()
 }
 
 func values() {
@@ -332,4 +333,31 @@ func callByValue(x int) {
 
 func callByReference(x *int) {
 	*x = 10
+}
+
+type Person struct {
+	name string
+	age  int
+}
+
+func newPerson(name string, age int) *Person {
+	return &Person{name: name, age: age}
+}
+
+func structure() {
+	// can't print structures with simple println :(
+	fmt.Println(Person{"Bob", 99})
+	fmt.Println(Person{"Jack", 100})
+
+	fmt.Println(newPerson("new", 50))
+
+	// references are stored in pointers
+	var anotherNewPerson *Person = newPerson("anotherPerson", 30)
+	fmt.Println(anotherNewPerson)
+	anotherNewPerson.age = 100
+	fmt.Println(anotherNewPerson)
+
+	person := Person{"person", 30}
+	person.age = 1000
+	fmt.Println(person)
 }
