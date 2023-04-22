@@ -16,7 +16,9 @@ func main() {
 	// conditions()
 	// calculator()
 	// arrays()
-	maps()
+	// maps()
+	range_based_loops()
+
 }
 
 func values() {
@@ -223,4 +225,46 @@ func maps() {
 	// declaration and definition in one line
 	var newMap map[string]string = map[string]string{"key": "value"}
 	fmt.Println(newMap)
+}
+
+func range_based_loops() {
+	numbers := []int{1, 2, 3, 4, 5}
+	sum := 0
+
+	for _, number := range numbers {
+		sum += number
+	}
+
+	// fuck yea, println is much convenient than fmt.Println() hahahaha
+	println(sum)
+
+	// let's do linear search
+	var key int = 4
+	var found bool = false
+	// we can iterate over primitive arrays. cool!
+	for index, value := range numbers {
+		if value == key {
+			println("key found at index:", index)
+			found = true
+		}
+	}
+
+	if !found {
+		println("could not find the required key")
+	}
+
+	keyValueStore := map[int]string{1: "one", 2: "two", 3: "three", 4: "four"}
+	for key, value := range keyValueStore {
+		println("key:", key, "value:", value)
+	}
+
+	// can iterate over just keys as well, how fuckin convenient!
+	for key := range keyValueStore {
+		println("just keys:", key)
+	}
+
+	// will output ascii numbers instead of characters
+	for index, character := range "some string" {
+		println("index:", index, "character", character)
+	}
 }
