@@ -17,8 +17,8 @@ func main() {
 	// calculator()
 	// arrays()
 	// maps()
-	range_based_loops()
-
+	// range_based_loops()
+	closures()
 }
 
 func values() {
@@ -266,5 +266,23 @@ func range_based_loops() {
 	// will output ascii numbers instead of characters
 	for index, character := range "some string" {
 		println("index:", index, "character", character)
+	}
+}
+
+func closures() {
+	nextInt := intStream()
+	println(nextInt())
+	println(nextInt())
+	println(nextInt())
+	println(nextInt())
+	println(nextInt())
+}
+
+func intStream() func() int {
+	var i int = 0
+
+	return func() int {
+		i += 1
+		return i
 	}
 }
